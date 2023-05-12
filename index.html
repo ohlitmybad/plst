@@ -496,6 +496,14 @@ tooltip.style("position", "absolute")
   .style("border-radius", "5px")
   .style("padding", "10px")
   .style("font-size", "12px");
+	
+	document.addEventListener('touchstart', function(event) {
+  // Check if the touch event target is the tooltip or one of its child elements
+  if (!tooltip.contains(event.target)) {
+    // Hide the tooltip if the touch event target is not the tooltip or one of its child elements
+    tooltip.style.display = 'none';
+  }
+});
 
 var names = rows.slice(1).map(function(row) {
   return row.split(',')[1];
