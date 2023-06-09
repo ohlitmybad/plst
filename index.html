@@ -893,45 +893,41 @@ var yMedianLine = svg.append("line")
 
 
 function updateChart() {
-  svg.selectAll("text.player-name").remove();
   xMetric = selectX.property("value");
   yMetric = selectY.property("value");
 
+  xScale.domain(d3.extent(data, function(d) { return d[header.indexOf(xMetric)]; })).nice();
+  yScale.domain(d3.extent(data, function(d) { return d[header.indexOf(yMetric)]; })).nice();
 
-xScale.domain(d3.extent(data, function(d) { return d[header.indexOf(xMetric)]; })).nice();
-yScale.domain(d3.extent(data, function(d) { return d[header.indexOf(yMetric)]; })).nice();
- 
-// Remove existing median lines
-svg.selectAll(".median-line").remove();
+  // Remove existing median lines
+  svg.selectAll(".median-line").remove();
 
-// Create new median lines
-if (medianLinesVisible) {
-  // Calculate the new medians based on the selected metrics
-  var xMedian = d3.median(data, function(d) { return d[header.indexOf(xMetric)]; });
-  var yMedian = d3.median(data, function(d) { return d[header.indexOf(yMetric)]; });
+  // Create new median lines
+  if (medianLinesVisible) {
+    // Calculate the new medians based on the selected metrics
+    var xMedian = d3.median(data, function(d) { return d[header.indexOf(xMetric)]; });
+    var yMedian = d3.median(data, function(d) { return d[header.indexOf(yMetric)]; });
 
-  // X-axis median line
-  svg.append("line")
-    .attr("class", "median-line")
-    .attr("x1", xScale(xMedian))
-    .attr("y1", 0)
-    .attr("x2", xScale(xMedian))
-    .attr("y2", height)
-    .style("stroke", "red")
-    .style("stroke-dasharray", "4");
+    // X-axis median line
+    svg.append("line")
+      .attr("class", "median-line")
+      .attr("x1", xScale(xMedian))
+      .attr("y1", 0)
+      .attr("x2", xScale(xMedian))
+      .attr("y2", height)
+      .style("stroke", "red")
+      .style("stroke-dasharray", "4");
 
-  // Y-axis median line
-  svg.append("line")
-    .attr("class", "median-line")
-    .attr("x1", 0)
-    .attr("y1", yScale(yMedian))
-    .attr("x2", width)
-    .attr("y2", yScale(yMedian))
-    .style("stroke", "red")
-    .style("stroke-dasharray", "4");
-}
-
-
+    // Y-axis median line
+    svg.append("line")
+      .attr("class", "median-line")
+      .attr("x1", 0)
+      .attr("y1", yScale(yMedian))
+      .attr("x2", width)
+      .attr("y2", yScale(yMedian))
+      .style("stroke", "red")
+      .style("stroke-dasharray", "4");
+  }
 
   svg.select(".x-label")
     .text(xMetric);
@@ -943,6 +939,23 @@ if (medianLinesVisible) {
     .duration(1000)
     .attr("cx", function(d) { return xScale(d[header.indexOf(xMetric)]); })
     .attr("cy", function(d) { return yScale(d[header.indexOf(yMetric)]); });
+
+  svg.selectAll(".player-name")
+    .data(data)
+    .join("text")
+    .attr("class", "player-name")
+    .attr("x", function(d) { return xScale(d[header.indexOf(xMetric)]) - 20; })
+    .attr("y", function(d) { return yScale(d[header.indexOf(yMetric)]) + 20; })
+    .text(function(d, i) {
+      if (clickedCircles.includes(i)) {
+        return names[i];
+      } else {
+        return "";
+      }
+    })
+    .style("font-family", "Arial")
+    .style("font-size", "12px");
+
 
   svg.select(".x-axis")
     .transition()
