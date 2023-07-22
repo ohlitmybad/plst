@@ -1,4 +1,7 @@
 
+<!DOCTYPE html>
+
+
 
 
 <html>
@@ -16,6 +19,9 @@
 	<title translate="no">DataMB | Plot PL Strikers</title>
 	<script src="https://d3js.org/d3.v5.min.js"></script>
 	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+
+
 
 <style>
 
@@ -125,6 +131,7 @@ body.dark-mode .button-8:focus {
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   }
 
+
 .dark-mode-toggle .toggle-icon::before {
   font-family: "Ionicons";
   content: "\f467"; /* Unicode value for the moon icon in Ionicons */
@@ -134,7 +141,6 @@ body.dark-mode .button-8:focus {
 body.dark-mode .dark-mode-toggle {
   background-color: #333333;
 }
-
 
 
 
@@ -165,43 +171,6 @@ circle.highlighted {
 circle {
   cursor: pointer;
 }
-
-.button-1 {
-  align-items: center;
-  background-color: #F9F9F9;
-  border-radius: 25px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-  box-sizing: border-box;
-  color: #121212;
-  cursor: pointer;
-  display: inline-flex;
-  flex: 1 1 auto;
-  font-family: Inter,sans-serif;
-  font-size: 0.82rem;
-  font-weight: 700;
-  justify-content: center;
-  line-height: 1;
-  margin: 0;
-  outline: none;
-  padding: 1rem 1.2rem;
-  text-align: center;
-  text-decoration: none;
-  transition: box-shadow .1s,-webkit-box-shadow .1s;
-  white-space: nowrap;
-  border: 0;
-  user-select: none;
-  position: absolute;
-  top: 70px;
-  left: 1150px;
-  width: 120px; 
- 
-  touch-action: manipulation;
-}
-
-.button-1:hover {
-  box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
-}
-
 
 .button-2 {
   align-items: center;
@@ -512,13 +481,15 @@ top: 717px;
 left: 611px;
 }
 
+
+
 .icon::before {
   content: "\f2b5";
   font-family: "Ionicons"; /* Replace with the appropriate font */
 font-size: 22px;
 }
 
-	
+
      img {
             width: 200px;
 position: absolute;
@@ -527,9 +498,7 @@ pointer-events: none;
 z-index: -1; 
 left: 475px;
 opacity: .055; 	
-}	     
-	     
-  
+	}
 
 
   #bottom-container {
@@ -547,8 +516,102 @@ opacity: .055;
     position: absolute;
     top: 890px;
     right: 0px;	  
-  }	    
+  }	
 
+
+		 #select-league {
+    position: absolute;
+    top: 726px;
+    left: 922px;	  
+  }	
+
+
+.icon4::before {
+  content: "\f21c";
+  font-family: "Ionicons"; /* Replace with the appropriate font */
+font-size: 22px;
+}		
+
+.icon3::before {
+  content: "\f448";
+  font-family: "Ionicons"; /* Replace with the appropriate font */
+font-size: 22px;
+}
+
+
+.button-1 {
+  align-items: center;
+  background-color: #e0e0de;
+  border-radius: 25px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 1.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0.1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 80px;
+  left: 1150px;
+  width: 50px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-1:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
+}
+
+.button-12 {
+  align-items: center;
+  background-color: #e0e0de;
+  border-radius: 25px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 1.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0.1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 80px;
+  left: 1218px;
+  width: 50px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-12:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
+}
+
+	     
 </style>
 
 
@@ -597,8 +660,11 @@ var _0x10c933=_0x206e;(function(_0xe11b29,_0xdeedf1){var _0x227cb8=_0x206e,_0x41
 
 </script>
 
-<a href="https://datamb.football/plots/" target="_blank" rel="noopener noreferrer">
-  <button class="button-1" role="button">Home</button>
+
+<a href="#" onclick="location.reload(); return false;" rel="noopener noreferrer">
+  <button class="button-1" role="button"><div class="icon4"></div></button>
+<a href="https://datamb.football/" target="_blank" rel="noopener noreferrer">
+  <button class="button-12" role="button"><div class="icon3"></div></button>
 <a href="https://datamb.football/gkpl/" target="_blank" rel="noopener noreferrer">
   <button class="button-2" role="button">Goalkeepers</button>
 <a href="https://datamb.football/plcb/" target="_blank" rel="noopener noreferrer">
